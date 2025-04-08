@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext "Server=DESKTOP-A7SNJDR\BHIM;Database=NetGuard;Trusted_Connection=True;TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entity -Context NetGuardDbContext -Force

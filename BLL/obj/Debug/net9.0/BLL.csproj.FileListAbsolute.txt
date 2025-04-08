@@ -1,0 +1,12 @@
+C:\Users\Bhim\source\repos\NetGuard\BLL\bin\Debug\net9.0\BLL.deps.json
+C:\Users\Bhim\source\repos\NetGuard\BLL\bin\Debug\net9.0\BLL.dll
+C:\Users\Bhim\source\repos\NetGuard\BLL\bin\Debug\net9.0\BLL.pdb
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.AssemblyInfoInputs.cache
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.AssemblyInfo.cs
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.sourcelink.json
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.dll
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\refint\BLL.dll
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\BLL.pdb
+C:\Users\Bhim\source\repos\NetGuard\BLL\obj\Debug\net9.0\ref\BLL.dll

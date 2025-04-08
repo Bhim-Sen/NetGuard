@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35919.96 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetGuard", "NetGuard\NetGuard.csproj", "{2177C421-0431-47E8-AA34-ACECB0F7527A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{9E98230D-1B8A-4A75-9102-65D478AB50B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D7E85FED-6BCA-4AFB-A253-262A135EB616}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2177C421-0431-47E8-AA34-ACECB0F7527A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2177C421-0431-47E8-AA34-ACECB0F7527A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2177C421-0431-47E8-AA34-ACECB0F7527A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E98230D-1B8A-4A75-9102-65D478AB50B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E98230D-1B8A-4A75-9102-65D478AB50B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E98230D-1B8A-4A75-9102-65D478AB50B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E98230D-1B8A-4A75-9102-65D478AB50B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7E85FED-6BCA-4AFB-A253-262A135EB616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7E85FED-6BCA-4AFB-A253-262A135EB616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7E85FED-6BCA-4AFB-A253-262A135EB616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7E85FED-6BCA-4AFB-A253-262A135EB616}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
