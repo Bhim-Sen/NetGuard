@@ -1,0 +1,21 @@
+# Ignore build output folders everywhere
+**/bin/
+**/obj/
+
+# Ignore Visual Studio cache and settings
+.vs/
+*.user
+*.suo
+
+# Ignore NuGet packages folder
+packages/
+
+# Ignore logs and temp files
+*.log
+*.tmp
+
+# Ignore publish folder
+publish/
+
+# Ignore user secrets (if any)
+appsettings.*.json
