@@ -1,0 +1,26 @@
+﻿@page "/postlogin"
+ 
+@layout EmptyLayout
+@using NetGuardUI.Data.Extension
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject NavigationManager Nav
+@inject IJSRuntime JS
+@inject ProtectedLocalStorage _protectedLocalStorage
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var uri = Nav.ToAbsoluteUri(Nav.Uri);
+            var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+            var claimJson = query["claim"];
+            var redirectUrl = query["redirectUrl"] ?? "/";
+            if (!string.IsNullOrEmpty(claimJson))
+            {
+                await _protectedLocalStorage.SetAsync("identity", claimJson);
+                Nav.NavigateTo(redirectUrl, true);  
+            }
+        }
+    }
+}

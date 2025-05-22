@@ -5,5 +5,20 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
-
+	
+	<ItemGroup>
+		<PackageReference Include="Blazor.Bootstrap" Version="3.3.1" />
+		<PackageReference Include="BlazorStrap" Version="5.2.103.250519" />
+		<PackageReference Include="BlazorStrap.V5" Version="5.2.103.250519" />
+		<PackageReference Include="Darnton.Blazor.DeviceInterop" Version="0.1.2" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="6.0.36" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.36">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Radzen.Blazor" Version="7.0.6" />
+		<PackageReference Include="Razorpay" Version="3.1.4" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.10.0" />
+	</ItemGroup>
 </Project>

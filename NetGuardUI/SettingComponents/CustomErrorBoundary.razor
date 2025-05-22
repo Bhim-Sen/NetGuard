@@ -1,0 +1,27 @@
+﻿<!-- CustomErrorBoundary.razor -->
+@inherits ErrorBoundaryBase
+
+<div>
+	@if (CurrentException is not null)
+	{
+		ResetError();
+	}
+	else
+	{
+		@ChildContent
+	}
+</div>
+
+@code {
+	protected override Task OnErrorAsync(Exception exception)
+	{
+		return Task.CompletedTask;
+	}
+
+	private void ResetError()
+	{
+		Recover();
+	}
+}
+
+

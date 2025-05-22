@@ -1,0 +1,102 @@
+<!doctype html>
+<title>We'll be Back Soon </title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(135deg, #198754, #2a5298);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    article {
+        text-align: center;
+        max-width: 700px;
+        padding: 50px;
+        background: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        font-size: 60px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #f39c12;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 20px #f39c12, 0 0 30px #e74c3c;
+        }
+
+        100% {
+            text-shadow: 0 0 30px #f39c12, 0 0 60px #e74c3c;
+        }
+    }
+
+    p {
+        font-size: 22px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #f39c12;
+        font-weight: bold;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #e74c3c;
+        }
+
+    svg {
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+        fill: #f39c12;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+</style>
+
+<article>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 202.24 202.24">
+        <path d="M101.12,0A101.12,101.12,0,1,0,202.24,101.12,101.12,101.12,0,0,0,101.12,0ZM159,148.76H43.28a11.57,11.57,0,0,1-10-17.34L91.09,31.16a11.57,11.57,0,0,1,20.06,0L169,131.43a11.57,11.57,0,0,1-10,17.34Z" />
+        <path d="M101.12,36.93h0L43.27,137.21H159L101.13,36.94Zm0,88.7a7.71,7.71,0,1,1,7.71-7.71A7.71,7.71,0,0,1,101.12,125.63Zm7.71-50.13a7.56,7.56,0,0,1-.11,1.3l-3.8,22.49a3.86,3.86,0,0,1-7.61,0l-3.8-22.49a8,8,0,0,1-.11-1.3,7.71,7.71,0,1,1,15.43,0Z" />
+    </svg>
+    <h1>We’ll be back soon!</h1>
+    <p>Sorry for the inconvenience. We’re performing some maintenance right now, but we’ll be back up shortly!</p>
+  
+</article>

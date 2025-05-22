@@ -1,39 +1,136 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">NetGuardUI</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
+﻿@inherits ComponentBase
+@inject IJSRuntime js
+
+
+
+
+<div class="top_header top_web_visible" style="display:none;background:#000"><div class="header_pd_12" style="height:23px;"><div class=""><div class=""><div class=""><marquee><h2 class="flashing">New Items Coming Claim Your Referral </h2></marquee></div></div></div></div></div>
+
+
+<div class="top_header top_web_visible" style="display:none;background: #198754;padding: 10px;">
+	<div class="container header_pd_12">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-lg-4 col-12 top_middle-align" style=" align-items: center;vertical-align: middle;
+    display: flex;justify-content: left;">
+
+					<p class="mb-0" style="margin-bottom: 0;color: #fff;">Referral Deal</p>
+
+				</div>
+				<div class="col-lg-4 col-12">
+					<div class="flashing" style="display: flex;margin: 0 auto;text-align: center;">
+						<div style="width: 100%;display: flex; justify-content: center;">
+							<div style="background: #fff;padding: 5px; height: 40px;width: 60px;color: #000;margin: 0px 3px; ">
+								<h6 style=" margin-bottom: 0;">04</h6>
+								<p style="font-size: 10px;line-height: 10px;margin-bottom:0px;text-transform:uppercase">hrs</p>
+							</div>
+							<div style="background: #fff;padding: 5px; height: 40px;width: 60px;color: #000;margin: 0px 3px; ">
+								<h6 style=" margin-bottom: 0;">15</h6>
+								<p style="font-size: 10px;line-height: 10px;margin-bottom:0px;text-transform:uppercase">mins</p>
+							</div>
+							<div style="background: #fff;padding: 5px; height: 40px;width: 60px;color: #000;margin: 0px 3px;">
+								<h6 style=" margin-bottom: 0;">50</h6>
+								<p style="font-size: 10px;line-height: 10px;margin-bottom:0px;text-transform:uppercase">sec</p>
+							</div>
+						</div>
+					</div><div style=" text-align: center;">
+						<p style="margin-bottom: 0;color: #fff;">New Items Coming Claim Your Referral</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-12 top_middle-align" style=" align-items: center;vertical-align: middle;
+    display: flex;justify-content: right;">
+					<button Type="button" class="common_btn modal_button color">Get Rewards</button>
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</div>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="oi oi-home" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="oi oi-plus" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
-                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
-            </NavLink>
-        </div>
-    </nav>
+
+
+
+
+
+<div class="header" id="myHeader">
+
+	<nav class="navbar navbar-expand-lg navbar-dark navbar_section">
+		<div class="container header_pd_12">
+			<a class="navbar-brand nav_menu_list logo_web" href="/">
+ 
+			</a>
+
+			<div>
+
+				<ul class="navbar-nav nav-menu-top ms-md-auto nav_list">
+
+
+					<li class="nav-item dropdown rounded">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+						</a>
+						<div class="dropdown-menu dropdown-menu-end dropdown_data" aria-labelledby="navbarDropdown">
+
+							<a class="dropdown-item nav_menu_list" href="MoneyToPoints"> <i class="bi bi-cash-coin me-2"></i> Money To Points </a>
+							<a class="dropdown-item nav_menu_list" href="BlogsByAdmin"> <i class="bi bi-blockquote-left me-2"></i>Add Blog </a>
+							<a class="dropdown-item nav_menu_list" href="UploadFestiveItem"> <i class="bi bi-calendar-event me-2"></i>Events </a>
+							<a class="dropdown-item nav_menu_list" href="UserRoleManager"> <i class="bi bi-person-fill-up me-2"></i>Assign Roles </a>
+							<a class="dropdown-item nav_menu_list" href="Admingate"> <i class="bi bi-person-fill-down me-2"></i>Requests For Affiliate Partner </a>
+							<a class="dropdown-item nav_menu_list" href="PromotionalBanners"> <i class="bi bi-images me-2"></i>Promotional Banner </a>
+							<a class="dropdown-item nav_menu_list" href="AssignUsersToManager"><i class="bi bi-people-fill me-2"></i>Assign Users To Manager</a>
+							<a class="dropdown-item nav_menu_list" style="cursor:pointer;" href="ScheduleHub"> <i class="bi bi-whatsapp me-2"></i>Whatsapp Template Schedule Hub  </a>
+
+						</div>
+					</li>
+
+
+
+
+
+					<li class="nav-item rounded">
+						<a class="nav-link"><i class="bi-person-circle me-2"></i>Login </a>
+
+					</li>
+
+
+				</ul>
+			</div>
+
+		</div>
+	</nav>
 </div>
 
-@code {
-    private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+<style>
+	.localOrLive-text {
+		position: absolute;
+		bottom: 0px;
+		left: 124px;
+		font-size: small;
+		color: white;
+	}
+</style>
 
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+
+<script>
+
+	$(window).scroll(function () {
+		var sticky = $('.header'),
+			scroll = $(window).scrollTop();
+
+		if (scroll >= 40) {
+			sticky.addClass('fixed');
+		}
+		else {
+			sticky.removeClass('fixed');
+		}
+	});
+
+
+</script>
+
+
+
