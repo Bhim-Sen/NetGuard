@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace DAL.UnitOfWork
 {
-	public interface IUnitOfWork
+	public interface IUnitOfWork :  IAsyncDisposable
 	{
 		NetGuardDbContext DbContext { get; }
- 
- 		void BeginTransaction();
-		void Commit();
-		void Rollback();
-		void Savechanges();
+
+
+		Task BeginTransactionAsync();
+		Task CommitAsync();
+		Task RollbackAsync();
+		Task SaveChangesAsync();
+
+		//-----------------------------
+		 
 	}
 }

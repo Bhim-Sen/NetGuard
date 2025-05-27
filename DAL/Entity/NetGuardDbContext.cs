@@ -15,6 +15,8 @@ public partial class NetGuardDbContext : DbContext
     {
     }
 
+    public virtual DbSet<TblUser> TblUsers { get; set; }
+
     public virtual DbSet<TblUserStatus> TblUserStatuses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -23,6 +25,19 @@ public partial class NetGuardDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<TblUser>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__TblUser__3214EC079647D0AD");
+
+            entity.ToTable("tbl_User");
+
+            entity.Property(e => e.Id).HasDefaultValueSql("(newsequentialid())");
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getutcdate())");
+            entity.Property(e => e.Gmail).HasMaxLength(100);
+            entity.Property(e => e.PasswordHash).HasMaxLength(256);
+            entity.Property(e => e.PhoneNumber).HasMaxLength(20);
+        });
+
         modelBuilder.Entity<TblUserStatus>(entity =>
         {
             entity.ToTable("tbl_UserStatus");

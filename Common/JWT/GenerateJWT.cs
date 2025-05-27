@@ -1,6 +1,6 @@
 ﻿using Common.CommonMethods;
 using Common.DTO;
- 
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -22,20 +22,19 @@ namespace Common.JWT
 			var tokenDto = new JwtDto();
 			var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:Key"]!));
 			var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-			if (userCredentials.PhoneNumber != null)
+			if (userCredentials.Email != null)
 			{
 				claims = new List<Claim> {
-						new Claim(JwtRegisteredClaimNames.UniqueName, userCredentials!.Name!),
-						new Claim(JwtRegisteredClaimNames.NameId, userCredentials!.Id.ToString()!),
-						new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+						new Claim(JwtRegisteredClaimNames.UniqueName, userCredentials!.Email!),
+						new Claim(JwtRegisteredClaimNames.NameId, userCredentials!.Id.ToString()!)
+
 					};
 			}
 			else
 			{
 				claims = new List<Claim> {
 						new Claim(JwtRegisteredClaimNames.UniqueName, userCredentials!.PhoneNumber!.ToString()!),
-						new Claim(JwtRegisteredClaimNames.NameId, userCredentials!.Id!.ToString()!),
-						new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+						new Claim(JwtRegisteredClaimNames.NameId, userCredentials!.Id!.ToString()!)
 					};
 			}
 			foreach (var role in roles)
@@ -62,6 +61,14 @@ namespace Common.JWT
 	{
 		public Guid? Id { get; set; }
 		public string? PhoneNumber { get; set; }
+		public string? Email { get; set; }
+		public string Password { get; set; } = null!;
+
+		//---------------------------------
+		public bool? IsSuperAdmin { get; set; }
+		public bool? IsAdmin { get; set; }
+		public bool? IsInBusiness { get; set; }
+		public bool? IsManager { get; set; }
 		public string? Name { get; set; }
 		public string? UserRole { get; set; }
 	}

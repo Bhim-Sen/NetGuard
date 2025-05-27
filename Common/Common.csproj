@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Enum\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="MediaBrowser.Common" Version="4.8.11" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.4" />

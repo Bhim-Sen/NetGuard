@@ -8,45 +8,53 @@ using System.Threading.Tasks;
 
 namespace DAL.UnitOfWork
 {
-	public class UnitOfWork : IUnitOfWork, IDisposable
+	public class UnitOfWork : IUnitOfWork
 	{
 		public NetGuardDbContext DbContext { get; }
 		private IDbContextTransaction? _transaction;  
 
 		public UnitOfWork(NetGuardDbContext dbContext) => DbContext = dbContext;  
 
-		public void BeginTransaction()
+	
+
+		public async Task BeginTransactionAsync()
 		{
-			_transaction = DbContext.Database.BeginTransaction();
+			_transaction = await DbContext.Database.BeginTransactionAsync();
+		}
+		public async Task SaveChangesAsync()
+		{
+			await DbContext.SaveChangesAsync();
 		}
 
-		public void Commit()
+		public async Task CommitAsync()
 		{
-			_transaction?.Commit();
-			_transaction?.Dispose();
+			if (_transaction != null)
+			{
+				await _transaction.CommitAsync();
+				await _transaction.DisposeAsync();
+			}
 		}
 
-		public void Rollback()
+		public async Task RollbackAsync()
 		{
-			_transaction?.Rollback();
-			_transaction?.Dispose();
+			if (_transaction != null)
+			{
+				await _transaction.RollbackAsync();
+				await _transaction.DisposeAsync();
+			}
 		}
 
-		public void SaveChanges()
+		public async ValueTask DisposeAsync()
 		{
-			DbContext.SaveChanges();
+			if (_transaction != null)
+				await _transaction.DisposeAsync();
+
+			await DbContext.DisposeAsync();
 		}
 
-		void IUnitOfWork.Savechanges()
-		{
-			SaveChanges();
-		}
+		//------------------------------------------------------
 
-		public void Dispose()
-		{
-			_transaction?.Dispose();
-			DbContext.Dispose();
-		}
+		 
 	}
 
 
