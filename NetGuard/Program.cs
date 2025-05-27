@@ -1,7 +1,9 @@
 using BLL.IService;
+using BLL.RefactorFunc;
 using BLL.Service;
 using DAL.Entity;
 using DAL.UnitOfWork;
+using MediaBrowser.Model.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -18,6 +20,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddTransient<ICommonService, CommonService>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddTransient<HttpClient>();
+builder.Services.AddScoped<AuthFunc>();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+
 
 string connectionStringKey;
 string connectionString;

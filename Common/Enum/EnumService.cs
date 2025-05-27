@@ -16,6 +16,7 @@ namespace Common.Enum
 		SuperAdmin,
 		Vendor,
 		Manager
+		// Add more roles as needed, but maintain the order.
 	}
 
 }
