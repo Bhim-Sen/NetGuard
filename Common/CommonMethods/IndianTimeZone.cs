@@ -10,6 +10,7 @@ namespace Common.CommonMethods
 	{
 		public static DateTime GetIndianTimeZone()
 		{
+			// Get the current time in India by converting UTC time to Indian Standard Time (IST)
 			TimeZoneInfo indianTimeZone = TimeZoneInfo.FindSystemTimeZoneById("India Standard Time");
 			DateTime currentTimeInIndia = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, indianTimeZone);
 			return currentTimeInIndia;

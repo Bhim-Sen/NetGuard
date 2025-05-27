@@ -10,6 +10,7 @@ namespace Common.Enum
 	// Do not change the order of this enum, as it is used for role-based access control.
 	public enum UserRole
 	{
+		// The order of these roles is important for role-based access control.
 		User,
 		Admin,
 		SuperAdmin,
