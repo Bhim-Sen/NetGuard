@@ -41,8 +41,6 @@ namespace BLL.Service
 			try
 			{
 				DateTime currentDateTime = IndianTimeZone.GetIndianTimeZone();
-				bool userExists = await unitOfWork.DbContext.TblUsers.AnyAsync(u => u.PhoneNumber == userDto.PhoneNumber || u.Gmail == userDto.Email);
-				if (userExists) return new Response(HttpStatusCode.BadRequest.ToString(), Message.AlreadyExist);
 
 				var user = await unitOfWork.DbContext.TblUsers.FirstOrDefaultAsync(u => u.PhoneNumber == userDto.PhoneNumber || u.Gmail == userDto.Email);
 
@@ -62,6 +60,29 @@ namespace BLL.Service
 				{
 					return new Response(HttpStatusCode.Unauthorized.ToString(), Message.Error);
 				}
+			}
+			catch (Exception ex)
+			{
+				await unitOfWork.RollbackAsync();
+				return new Response(HttpStatusCode.InternalServerError.ToString(), ex.Message);
+			}
+		}
+
+		public async Task<Response> LastSignOut(string token)
+		{
+			await unitOfWork.BeginTransactionAsync();
+			try
+			{
+				var user = await _commonService.GetLoginUser(token);
+				if (user == null)
+				{
+					await unitOfWork.RollbackAsync();
+					return new Response(HttpStatusCode.BadRequest.ToString(), "Failed to Sign Out. User Is Null");
+				}
+				//user.LastLogout = IndianTimeZone.GetIndianTimeZone();
+ 				await unitOfWork.SaveChangesAsync();
+				await unitOfWork.CommitAsync();
+				return new Response(HttpStatusCode.OK.ToString(), "User Logout Successfully");
 			}
 			catch (Exception ex)
 			{

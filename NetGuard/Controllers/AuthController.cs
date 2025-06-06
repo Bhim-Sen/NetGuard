@@ -22,6 +22,14 @@ namespace NetGuard.Controllers
 		{
 			var user = await _auth.Login(dto);
  			return Ok(user);
+		}	
+		
+		[HttpPost("LastSignOut")]
+		public async Task<IActionResult> LastSignOut(UserDTO dto)
+		{
+			string jwtToken = await GetJwtToken.GetTokenFromHeader(HttpContext.Request);
+			var user = await _auth.LastSignOut(jwtToken);
+ 			return Ok(user);
 		}
 	}
 }

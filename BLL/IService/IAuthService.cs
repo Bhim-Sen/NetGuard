@@ -11,5 +11,7 @@ namespace BLL.IService
 	public interface IAuthService
 	{
 		Task<Response> Login(UserDTO userCredentials);
+		
+		Task<Response> LastSignOut(string token);
 	}
 }

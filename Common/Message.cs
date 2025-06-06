@@ -34,6 +34,7 @@ namespace Common
 		public const string AlreadyLinked = "Already Linked To Another Account";
 		public const string Error = "Error Occured, Try Again";
 		public const string Login = "Login SuccessFully";
-		public const string CreationFailed = "User creation failed";
+		public const string CreationFailed = "User creation failed";	
+		public const string Unauthorized = "User Unauthorized";
 	}
 }
